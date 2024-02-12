@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital@1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color : rgba(0, 115, 255, 0.826);
+}
+body{
+    font-family: 'Inria Sans', sans-serif;  
+}
+
+main{
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(bg.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.container{
+    background-color: white;
+    width: 800px;
+    height: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 4px 10px 50px 10px #6d6a6a;
+    text-align: center;
+}
+
+.search-contain{
+    margin-top: 30px;
+}
+
+.search-contain input{
+    width: 70%;
+    height: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid gray;
+    outline: none; /* when user click on input*/
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Inria Sans', sans-serif;
+
+}
+
+.search-contain button{
+    height: 40px;
+    width: 100px;
+    margin-left: 5%;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid transparent;
+    background-color: var(--color);
+    color: white;
+    cursor: pointer;
+}
+
+.search-contain button:hover{
+    background-color: rgba(0, 115, 255, 0.874);
+    color: white;
+    cursor: pointer;
+}
+
+
+.text_audio{
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    margin-left: 40px;
+}
+.result h3{
+    width: 80%;
+    height: auto;
+    padding: 10px 0px 10px 0px;
+    font-size: 18px;
+    text-align: start;
+}
+.result i{
+  font-size: 20px;
+  align-items: end;
+  margin-left: 7%;
+  cursor: pointer;
+}
+.desci{
+    width: 95%;
+    margin-left: 40px;
+}
+.desci p{
+    text-align: start;
+    
+}
+.partofspeech{
+    color: rgba(0, 0, 0, 0.451);
+}
+.meaning{
+    margin-top: 20px;
+    color: #000000cb;
+}
+.sentence{
+    border-left: 3px solid var(--color);
+    padding-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #000000cb;
+    border-radius: 5px;
+}
+
+.loader_div{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    /* border: 1px solid; */
+}
+
+.loader{
+    border: 10px dotted rgba(177, 188, 188, 0.113);
+    margin-top: 90px;
+    width: 100px ;
+    height: 100px;
+    display: none;
+    border-radius: 50%;
+    animation: circle 2s infinite;
+    border-bottom: 10px dotted var(--color);
+}
+
+.error{
+    margin-top: 100px;
+    font-size: 20px;
+}
+
+dialog{
+    position: absolute;
+    display: flex; 
+    align-items: end ;
+    justify-content: center; 
+    text-align: center; 
+    bottom: 20px;
+    width: 100%; 
+    height: 100%;
+    background-color: transparent ;
+    border: 0px solid transparent;
+    /* animation: slider 2s ease-in ; */
+    visibility: hidden;
+}
+dialog p{
+    background-color: rgba(0, 0, 0, 0.876); 
+    color: white; 
+    padding: 10px; 
+    border-radius: 10px;
+    font-size: 16px; 
+    box-shadow: 10px 5px 20px 10px  rgba(0, 0, 0, 0.398);
+    animation: slider 3s ; 
+}
+dialog p i{
+    font-size: 20px; 
+    padding: 10px;
+}
+
+@keyframes slider {
+    0%{
+        opacity: 0;
+        bottom: 0px;
+    }
+    100%{
+        opacity: 1;
+        bottom: 20px;
+    }
+}
+
+@keyframes sliderre {
+    0%{
+        opacity: 1;
+        bottom: 20px;
+       
+    }
+    100%{
+        opacity: 0;
+        bottom: 0px;
+    }
+}
+
+@keyframes circle {
+    0%{
+        rotate: 0deg;
+    }
+
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@media (max-width : 820px) {
+    .container{
+        width: 600px;   
+    }
+}
+
+@media (max-width : 620px) {
+    .container{
+        width: 500px;   
+    }
+}
+
+@media (max-width : 490px) {
+    .container{
+        width: 300px;
+        height: 300px;
+        padding: 0px;
+    }
+    
+    .search-contain{
+        margin-top: 30px;
+    }
+    
+    .search-contain input{
+        width: 50%;
+        padding: 8px;
+    }
+    
+    .search-contain button{
+        height: 30px;
+        width: 80px;
+        font-size: 14px;
+    }
+    
+    .text_audio{
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+    .result h3{
+        width: 60%;
+    }
+    .desci{
+        width: 95%;
+        margin-left: 20px;
+    }
+    .meaning{
+        margin: 10px 10px 10px 0px;
+        font-size: 13px;
+
+    }
+    .sentence{
+        border-left: 2px solid var(--color);
+        margin-bottom: 20px;
+        margin: 0px 10px 20px 0px;
+        font-size: 13px;
+    }
+    .error{
+        margin-top: 30px;
+        font-size: 14px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+
+    
+.loader{
+    margin-top: 50px;
+    width: 80px ;
+    height: 80px;
+}
+}
